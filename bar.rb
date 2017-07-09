@@ -14,6 +14,8 @@ class Bar
     @playlist = []
     @drinks = []
     @money = 0
+  
+
   end
 
   def add_drink_to_bar(drink)

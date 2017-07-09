@@ -7,11 +7,14 @@ class Room
   attr_reader :name, :capacity
   attr_accessor :playlist, :people
 
-  def initialize(name, capacity)
+  def initialize(name, capacity, entry)
     @name = name
     @capacity = capacity
     @playlist = []
     @people = []
+    @entry = entry
+
+
   end
 
   def room_capacity
@@ -25,6 +28,7 @@ class Room
   def add_guest_to_room(added_guest)
     if @people.count < @capacity then
       @people << added_guest
+      added_guest.money - @entry  
     else 
       return "Sorry buddy, rooms full"   
     end 
